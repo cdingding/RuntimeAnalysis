@@ -11,7 +11,6 @@ def find_anagrams_permu(lst):
             if word1 != word2:
                 for perm in permutations(word1):
                     if perm == tuple(word2) and word1 not in results:
-                    #if perm == list(word2):
                         results.append(word1)
     return results
 
@@ -77,10 +76,10 @@ def cal_time(func, lst):
     func(lst)
     end = time()
     period = (end-start)*1000
-    print 'For time, %s run time is %f .' %(func.__name__, period)
+    print 'For time, %s run time is: %f ms.' %(func.__name__, period)
     start_time = timeit.default_timer()
     func(lst)
-    print 'For timeit, %s run time is %f .' %(func.__name__, (timeit.default_timer() - start_time)*1000)
+    print 'For timeit, %s run time is: %f ms.' %(func.__name__, (timeit.default_timer() - start_time)*1000)
     print func(lst)
 
 if __name__=='__main__':
