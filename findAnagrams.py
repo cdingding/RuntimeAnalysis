@@ -40,28 +40,7 @@ def find_anagrams_counter(lst):
                 break
     return results
 
-def find_anagrams_dic(lst):
-    results = []
-    for word1 in lst:
-        for word2 in lst:
-            if word1!=word2 and sorted(word1)==sorted(word2) and word1 not in results:
-                results.append(word1)
-    return results
-
 def find_anagrams_dct(lst):
-    dct = defaultdict(list)
-    result = []
-    for word in lst:
-        if word in dct[tuple(sorted(word))]:
-            dct[tuple(sorted(word))]+=1
-        else:
-            dct[tuple(sorted(word))].append(word)
-    for key, values in dct.iteritems():
-        if len(dct[key])>1:
-            result.extend(dct[key])  #extend instead of append
-    return result
-
-def find_anagrams_d(lst):
     dct = defaultdict(list)
     result = []
     for word in lst:
@@ -89,4 +68,3 @@ if __name__=='__main__':
     cal_time(find_anagrams_notin, lst)
     cal_time(find_anagrams_sortbrk,lst)
     cal_time(find_anagrams_dct,lst)
-    cal_time(find_anagrams_d,lst)
