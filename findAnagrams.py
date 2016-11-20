@@ -70,6 +70,10 @@ def find_anagrams_dct(lst):
             result.extend(value)
     return result
 
+def find_anagrams_dct1(lst):
+    dct = defaultdict(tuple)
+    return lst
+
 def cal_time(func, lst):
     start = time()
     func(lst)
@@ -112,5 +116,6 @@ if __name__=='__main__':
     cal_time(find_anagrams_dct,lst)
     cal_time(find_anagrams1, lst)
     cal_time(find_anagrams2, lst)
-    print findit(lst)
-    print findit1(lst)
+    cal_time(findit,lst)
+    cal_time(findit1,lst)
+    print find_anagrams_dct1(lst)
